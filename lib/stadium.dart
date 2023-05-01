@@ -4,11 +4,15 @@ class Stadium {
   final int id;
   final String name;
   final SourceFile sourceFile;
+  final String? sport;
+  final int? price;
 
   Stadium({
     required this.id,
     required this.name,
     required this.sourceFile,
+    this.sport,
+    this.price,
   });
 
   // 통신을 위해서 json 처럼 생긴 문자열 {"id":1} => Dart 오브젝트
@@ -26,6 +30,8 @@ class Stadium {
       id: json['id'],
       name: json['name'],
       sourceFile: SourceFile.fromJson(json['sourceFile']),
+      sport: json['sport'],
+      price: json['price'],
     );
   }
 
