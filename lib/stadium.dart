@@ -1,3 +1,5 @@
+import 'package:different_type_parse/category.dart';
+import 'package:different_type_parse/court.dart';
 import 'package:different_type_parse/source_file.dart';
 
 class Stadium {
@@ -6,6 +8,14 @@ class Stadium {
   final SourceFile sourceFile;
   final String? sport;
   final int? price;
+  final String? startTime;
+  final String? endTime;
+  final double? lat;
+  final double? lon;
+  final String? address;
+  final Category? category;
+  final List<Court>? courts;
+
 
   Stadium({
     required this.id,
@@ -13,6 +23,13 @@ class Stadium {
     required this.sourceFile,
     this.sport,
     this.price,
+    this.startTime,
+    this.endTime,
+    this.lat,
+    this.lon,
+    this.address,
+    this.category,
+    this.courts,
   });
 
   // 통신을 위해서 json 처럼 생긴 문자열 {"id":1} => Dart 오브젝트
@@ -32,6 +49,15 @@ class Stadium {
       sourceFile: SourceFile.fromJson(json['sourceFile']),
       sport: json['sport'],
       price: json['price'],
+      startTime: json['startTime'],
+      endTime: json['endTime'],
+      lat: json['lat'],
+      lon: json['lon'],
+      address: json['address'],
+      category: json['category'] != null ? Category.fromJson(json['category']) : null,
+      courts: json['courts'] != null ? (json['courts'] as List<dynamic>)
+          .map((courtJson) => Court.fromJson(courtJson))
+          .toList() : null,
     );
   }
 

@@ -7,8 +7,8 @@ import 'package:logger/logger.dart';
 String token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqd3RzdHVkeSIsInJvbGUiOiJQTEFZRVIiLCJuaWNrbmFtZSI6InNzYXIxMjMiLCJpZCI6MSwiZXhwIjoxNjgzMDA5MTE4fQ.NczIkH07fPyUAwrF5Tm1BDGCiIa7tk3D9-QbbUGKuNeSb0iS_QbKW3gyUClxVEvf5hYGVhv8ADimpE46-9TOcw';
 
 void main() async {
-  await fetchStadiumList_test();
   await fetchStadiumDetail_test();
+  await fetchStadiumList_test();
 }
 
 Future<void> fetchStadiumList_test() async {
